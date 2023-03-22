@@ -1,0 +1,219 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eee;
+}
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 50px);
+    width: 70%;
+    background-color: white;
+    padding: 12px;
+    gap: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+}
+.chat .decContainer {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  
+}
+@media (max-width: 992px) {
+    .chat {
+        gap: 10px;
+    }
+    .chat .decContainer {
+        position: relative;
+        top: 0;
+        left: 0;
+        justify-content: center;
+    }
+    .chat .typing-area .btns {
+        width: 100%;
+    }
+}
+.chat .decBtn {
+    color: white;
+    background-color: rgb(64, 91, 167);
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+.chat .user-friend  {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+}
+.chat .user-friend #back {
+    font-size: 25px;
+    padding: 5px 12px;
+    background-color: rgb(64, 91, 167);;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.chat .user-friend img {
+    width: 60px;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+.chat .messages-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+    overflow: auto;
+    padding: 15px;
+    font-weight: 600;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    
+}
+.chat .messages-container::-webkit-scrollbar {
+    background-color: transparent;
+    border-radius: 15px;
+    width: 5px;
+}
+.chat .messages-container::-webkit-scrollbar-thumb {
+    background-color:transparent;
+    border-radius: 15px;
+}
+.chat .message {
+    width: fit-content;
+    padding: 15px 20px;   
+    line-height: 1.25;
+    font-weight: 300;
+    font-size: 15px;
+    position: relative;
+    border-radius: 20px;
+}
+.chat .In-message {
+    background-color: black;
+    color: white;
+    align-self: flex-end;
+    cursor: pointer;
+}
+.chat .out-message {
+    background-color: white;
+    color: black;
+    align-self: flex-start;
+    border: 1px solid gainsboro;
+}
+.chat .selected {
+   border: 2px solid black;
+   background-color:white;
+   color: black;
+}
+.chat .typing-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-height: 12%;
+}
+.chat .typing-area .inputField{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    resize: none;
+    line-height: 1.25;
+    font-size: 16px;
+    font-weight: 300;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.chat .typing-area .inputField::placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: #ccc;
+    transition: 0.3s;
+}
+.chat .typing-area .inputField:focus {
+    outline: none;
+}
+.chat .typing-area .inputField:focus::placeholder {
+    opacity: 0;
+}
+.chat .typing-area .btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 50%;
+    height: 100%;
+    gap: 5px;
+}
+.chat .typing-area .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(64, 91, 167);
+    height: 100%;
+    flex: 1;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.chat .typing-area .inputField {
+    caret-color: rgb(28, 72, 194);
+}
+@media (max-width: 768px) {
+    .chat {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0px;
+    }
+    .chat .message {
+        padding: 10px 20px;
+    }
+    .chat .messages-container {
+        gap: 15px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .chat .typing-area {
+        flex-direction: column;
+    }
+    .chat .typing-area .btn {
+        padding: 15px 20px;
+    }
+}
+@media (max-width: 1500px) {
+    .chat .typing-area .btns {
+        flex: 70%;
+    }
+}
+a, a:visited {
+    text-decoration: none;
+}

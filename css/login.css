@@ -1,0 +1,97 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    height: 100vh;
+    padding-inline: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+.page-wrapper  {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: fit-content;
+    border-radius: 15px;
+    background-color: #303434;
+    padding: 15px;
+}
+@media (max-width: 768px) {
+    .page-wrapper {
+        width: 100%;
+    }
+}
+.page-wrapper .current-page {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    gap: 15px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+}
+.page-wrapper .current-page .current-login {
+    border-bottom: 3px solid #eee;
+}
+.page-wrapper .current-page > * {
+    padding: 15px;
+}
+.page-wrapper .signup {
+    display: none;
+}
+
+.page-wrapper  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.page-wrapper .form div{
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    font-size: 18px;
+}
+.page-wrapper  .form div label {
+    font-size: 14px;
+    color: #ccc;
+    letter-spacing: 5px;
+}
+.page-wrapper .form div input {
+    font-size: 20px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 8px;
+    height: 50px;
+    background-color: #585c6c;
+    caret-color: white;
+    color: white;
+}
+.page-wrapper .form div input:focus {
+    outline: none;
+}
+.page-wrapper .form div input:focus::placeholder {
+    opacity: 0;
+}
+.page-wrapper .form div input::placeholder {
+    font-size: 14px;
+    transition: 0.3s;
+    color: white;
+}
+.page-wrapper .form .login-btn {
+    background-color: rgb(64, 91, 167);
+    color: white;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 15px 55px;
+    cursor: pointer;
+    letter-spacing: 5px;
+}
